@@ -1,29 +1,36 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
+/**
+ * ifood Uygulaması Ana Layout
+ * Root layout ve navigation yapısı
+ */
+
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
-
-import { useColorScheme } from '@/hooks/useColorScheme';
+import { useEffect } from 'react';
+import { COLORS } from '../src/constants/colors';
+import { useAppStore } from '../src/store/useAppStore';
+import { ErrorBoundary } from '../src/components/common/ErrorBoundary';
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
-  const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
-  });
+  const { setOnboardingCompleted } = useAppStore();
 
-  if (!loaded) {
-    // Async font loading only occurs in development.
-    return null;
-  }
+  useEffect(() => {
+    // Uygulama başlangıç ayarları
+    console.log('ifood uygulaması başlatılıyor...');
+  }, []);
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
+    <ErrorBoundary>
+      <StatusBar style="auto" backgroundColor={COLORS.PRIMARY} />
+      <Stack
+        screenOptions={{
+          headerShown: false,
+          contentStyle: { backgroundColor: COLORS.BACKGROUND },
+        }}
+      >
+        <Stack.Screen name="index" />
+        <Stack.Screen name="(onboarding)" />
+        <Stack.Screen name="(tabs)" />
       </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    </ErrorBoundary>
   );
 }
