@@ -1,50 +1,138 @@
-# Welcome to your Expo app 👋
+# ifood Mobile App Clone
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Bu proje, ifood uygulamasının profesyonel bir klonudur. React Native ve Expo kullanılarak geliştirilmiştir.
 
-## Get started
+## 🚀 Özellikler
 
-1. Install dependencies
+### ✅ Tamamlanan Özellikler
+- **Splash Screen**: Uygulama başlangıç ekranı
+- **Onboarding Flow**: Hoş geldin, izinler ve kimlik doğrulama seçimi
+- **Konum İzinleri**: Konum ve bildirim izinleri yönetimi
+- **Ana Sayfa**: Restoran listesi ve kategoriler
+- **Tab Navigation**: Ana navigasyon yapısı
+- **Profil Sayfası**: Kullanıcı profili ve ayarlar
+- **State Management**: Zustand ile global state yönetimi
 
-   ```bash
-   npm install
-   ```
+### 🔄 Geliştirilecek Özellikler
+- Kimlik doğrulama ekranları (Login/Register)
+- Restoran detay sayfaları
+- Sipariş işlemleri
+- Ödeme entegrasyonu
+- Bildirim sistemi
+- Arama fonksiyonu
 
-2. Start the app
+## 🛠️ Teknolojiler
 
-   ```bash
-   npx expo start
-   ```
+- **React Native**: 0.79.6
+- **Expo**: 53.0.22
+- **Expo Router**: 3.5.24
+- **TypeScript**: 5.8.3
+- **Zustand**: 4.5.7 (State Management)
+- **React Native Vector Icons**: Icon kütüphanesi
+- **Expo Linear Gradient**: Gradient efektleri
+- **Expo Blur**: Blur efektleri
+- **Expo Location**: Konum servisleri
+- **Expo Notifications**: Bildirim servisleri
 
-In the output, you'll find options to open the app in a
+## 📁 Proje Yapısı
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+src/
+├── components/          # Yeniden kullanılabilir bileşenler
+│   ├── ui/             # UI bileşenleri (Button, Card, vb.)
+│   ├── common/         # Ortak bileşenler
+│   └── forms/          # Form bileşenleri
+├── screens/            # Ekran bileşenleri
+│   ├── onboarding/     # Onboarding ekranları
+│   ├── main/           # Ana ekranlar
+│   └── auth/           # Kimlik doğrulama ekranları
+├── constants/          # Sabitler (renkler, tipografi, boşluklar)
+├── types/              # TypeScript tip tanımları
+├── store/              # Zustand store'ları
+├── services/           # API ve servis fonksiyonları
+├── utils/              # Yardımcı fonksiyonlar
+├── hooks/              # Custom React hooks
+└── assets/             # Resimler, ikonlar, fontlar
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 🎨 Tasarım Sistemi
 
-## Learn more
+### Renkler
+- **Primary**: #EA1D2C (ifood kırmızısı)
+- **Secondary**: #FFC107 (Sarı)
+- **Success**: #4CAF50 (Yeşil)
+- **Error**: #F44336 (Kırmızı)
 
-To learn more about developing your project with Expo, look at the following resources:
+### Tipografi
+- **Font Sizes**: XS(12) - 5XL(48)
+- **Font Weights**: Light(300) - ExtraBold(800)
+- **Line Heights**: Tight(1.2) - Loose(1.8)
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### Boşluklar
+- **Spacing**: XS(4) - 4XL(96)
+- **Border Radius**: XS(4) - Full(9999)
+- **Shadows**: SM, MD, LG gölge seviyeleri
 
-## Join the community
+## 🚀 Kurulum
 
-Join our community of developers creating universal apps.
+1. **Bağımlılıkları yükleyin:**
+```bash
+npm install
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+2. **Uygulamayı başlatın:**
+```bash
+npm start
+```
+
+3. **Platform seçin:**
+- iOS: `npm run ios`
+- Android: `npm run android`
+- Web: `npm run web`
+
+## 📱 Ekranlar
+
+### Onboarding Flow
+1. **Splash Screen**: Uygulama başlangıç ekranı
+2. **Welcome Screen**: Hoş geldin ve restoran örnekleri
+3. **Permissions Screen**: Konum ve bildirim izinleri
+4. **Auth Choice Screen**: Giriş/Kayıt seçimi
+
+### Ana Ekranlar
+1. **Home Screen**: Restoran listesi ve kategoriler
+2. **Explore Screen**: Keşfet sayfası (geliştirilecek)
+3. **Orders Screen**: Sipariş geçmişi
+4. **Profile Screen**: Kullanıcı profili ve ayarlar
+
+## 🔧 Geliştirme
+
+### Yeni Ekran Ekleme
+1. `src/screens/` altında uygun klasöre ekran dosyası oluşturun
+2. `app/` altında route dosyası oluşturun
+3. Layout dosyalarında route'u tanımlayın
+
+### Yeni Bileşen Ekleme
+1. `src/components/` altında uygun klasöre bileşen dosyası oluşturun
+2. TypeScript tip tanımlarını ekleyin
+3. Gerekirse constants dosyalarını güncelleyin
+
+### State Management
+- Zustand store'ları `src/store/` altında tanımlanır
+- Selector hook'ları store dosyasında export edilir
+- Bileşenlerde `useAppStore()` hook'u kullanılır
+
+## 📄 Lisans
+
+Bu proje eğitim amaçlı geliştirilmiştir. ifood markası ve tasarımı orijinal sahiplerine aittir.
+
+## 🤝 Katkıda Bulunma
+
+1. Fork yapın
+2. Feature branch oluşturun (`git checkout -b feature/amazing-feature`)
+3. Commit yapın (`git commit -m 'Add amazing feature'`)
+4. Push yapın (`git push origin feature/amazing-feature`)
+5. Pull Request oluşturun
+
+## 📞 İletişim
+
+Proje hakkında sorularınız için issue açabilirsiniz.
