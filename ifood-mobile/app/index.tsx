@@ -25,4 +25,7 @@ export default function Index() {
 
 export { ONBOARDING_KEY };
 
+indexedDB 
+
+
 
